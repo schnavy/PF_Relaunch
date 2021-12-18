@@ -37,25 +37,35 @@
 }
 
 
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-body{
+body {
     font-family: 'Monument Grotesk';
     font-size: 110%;
     line-height: 110%;
     margin-bottom: 110px;
+    scroll-snap-type: y mandatory;
+    scroll-snap-points-y: 100%;
+
 }
-a{
+
+a {
     color: blue;
     cursor: ne-resize;
+    text-decoration: none;
 }
-.foot-wrapper a{
-    color: rgb(216, 216, 216);
+a:hover{
+    /* font-style: italic; */
 }
-.foot-wrapper{
+
+.foot-wrapper a {
+    color: white;
+}
+
+.foot-wrapper {
     box-sizing: border-box;
     width: 100%;
     padding: 16px;
@@ -71,79 +81,181 @@ a{
 }
 
 @media(max-width: 800px) {
-    .foot-wrapper{
+    .foot-wrapper {
 
         grid-template-columns: 1fr;
-        
+
     }
 }
+.col-4{
+    padding-right: 10px;
+}
 
-.curated-space-wrapper{
+.curated-space-wrapper {
+    cursor: none;
+    scroll-snap-align: start;
+
     /* display: grid; */
     /* grid-template-columns: repeat(3, min-content); */
     /* gap: 15px; */
     width: 100vw;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     height: 100vh;
 }
-.filter-wrapper{
-    height: 100px;
-    padding: 16px;
+
+.archive-wrapper {
+    scroll-snap-align: start;
+    min-height: 100vh;
+
 }
-.btn{
+
+.filter-wrapper {
+    height: 100px;
+    padding: 8px;
+    z-index: 10;
+}
+
+.btn {
     display: inline-block;
     padding: 6px 14px;
-    margin-right: 6px;
-    background-color: blue;
+    
+    margin: 8px 0px 8px 8px;
+    background-color: rgb(186, 186, 186);
     color: white;
     border-radius: 100px;
-    outline: 2px solid blue;
+    outline: 2px solid rgb(186, 186, 186);
     box-sizing: border-box;
     cursor: pointer;
+    text-decoration: none;
+    /* transition: all 100ms ease-out; */
 }
 
-.filter-btn:hover{
-    background-color: rgb(0, 0, 174);
-    outline: 2px solid rgb(0, 0, 174);
+.filter-container{
+    display: inline-block;
+}   
+
+.filter-btn:hover, .filter-btn.active-btn {
+    background-color: rgb(0, 0, 255);
+    outline: 2px solid rgb(0, 0, 255);
+    color: white;
+    /* font-style: italic; */
 
 }
+.filter-btn:hover {
+    outline: 3px solid rgb(0, 0, 255);
+}
 
-.space-btn{
+.space-btn {
     background-color: transparent;
     outline: 2px dashed black;
     color: black;
-    margin-right: 24px;
+    margin-right: 16px;
+
 
 }
-.space-btn:hover{
+.space-btn:hover {
     background-color: transparent;
     outline: 2px solid black;
-    color: black;
 }
-.grid-wrapper{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+.space-btn.inverted {
+    outline: 2px dashed white;
+    mix-blend-mode: difference;
+    color: white;
+}
+.space-btn.inverted:hover{
+    outline: 2px solid white;
+
+}
+
+
+.grid-wrapper {
+    word-wrap: break-word;
+    white-space: normal;
+    /* display: grid; */
+    /* grid-template-columns: repeat(4, 1fr); */
     /* gap: 15px; */
     padding: 8px;
     max-width: 100vw;
 }
 
-.grid-card{
+.grid-card {
+    vertical-align: top;
     display: inline-block;
     padding: 8px;
-    /* width: 400px; */
-    margin-bottom: 16px;
+    width: 350px;
+    /* margin-bottom: 16px; */
     /* background-color: lightblue; */
+
+
+
+}
+.grid-card a:hover{
+        font-style: italic;
+
+}
+
+.grid-card p, .grid-card a {
+    /* max-width: 95%; */
+    /* max-height: 100px; */
+    overflow: hidden;
+    margin-bottom: 2px;
+
+}
+
+.grid-card .title {
+    /* text-decoration: underline; */
     
+}
+.grid-card .decription {
+    margin: 8px 0px;
+}
+.grid-card .extendable{
+    cursor: pointer;
+}
+
+.grid-card .year {
+    /* letter-spacing: -0.07em;
+    font-variant-numeric: tabular-nums; */
+    font-style: italic;
+}
+
+.grid-card .card-image {
+    margin: 8px 0px;
+    max-width: 100%;
+    background-color: green;
+    /* min-height: 200px; */
+    max-height: 250px;
+    object-fit: cover;
+    cursor: pointer;
 
 }
-.grid-card p{
-max-width: 90%;
+.indent{
+    margin-left: 0px;
+}
+.curated-space-wrapper img {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -10;
+}
+
+
+
+#cursor {
+    pointer-events: none;
+    position: absolute;
+    mix-blend-mode: difference;
+    z-index: 1000;
 
 }
-.grid-card .image{
-    margin: 16px 0px;
-    width: 100%;background-color: green;
-    height: 300px;
+
+#cursor svg {}
+
+#cursor svg circle {
+    fill: #f7f8fa;
+    z-index: 1000;
 
 }
