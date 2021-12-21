@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title><%= title%></title>
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <title>mail@davidwahrenburg.de</title>
 
 
 
@@ -14,7 +15,11 @@
 
         var activeArray = <%- JSON.stringify(work) %> ;
         
-            
+        activeArray.forEach((event)=>{
+            for(i = 0; i< event.tags.length; i++){
+                event.tags[i]=event.tags[i].toLowerCase();
+            }
+        })
 
         activeArray.sort(function(a, b) {
             var keyA = new Date(a.date),
@@ -24,16 +29,19 @@
             if (keyA > keyB) return -1;
             return 0;
         });
+        console.log(activeArray)
         let thumbs = [];
             
         for (i = 0; i < activeArray.length; i++) {
-            thumbs[i] = new Image();
                 
             if (activeArray[i].thumb != undefined) {
-                thumbs[i].src = "https://davidwahrenburg.de/" + activeArray[i].thumb;
+                let temp = new Image();
+                 
+                temp.src = "https://davidwahrenburg.de/" + activeArray[i].thumb;
+                thumbs.push(temp)
                 activeArray[i].pimgs.unshift(activeArray[i].thumb)
             } else if(activeArray[i].pimgs != undefined) {
-                thumbs[i].src ="https://davidwahrenburg.de/" +  activeArray[i].pimgs[0];
+                // thumbs[i].src ="https://davidwahrenburg.de/" +  activeArray[i].pimgs[0];
             }
 
         }
@@ -47,24 +55,17 @@
 </head>
 
 <body>
-    <section id="curated" class="curated-space-wrapper">
+    <section id="curated" class="curated-space-wrapper open">
         <div id="cursor">
             <svg id="svg-cursor" height="400" width="400">
                 <circle cx="200" cy="200" r="0" stroke-width="0"></circle>
             </svg>
     </div>
         <div id="archive-btn" class="filter-wrapper">
-            <a href="#archive" class="btn space-btn inverted">Archive &darr;</a>
+            <a href="#archive" id="archive-btn" class="btn space-btn inverted">Archive &darr;</a>
         </div>
     </section>
-    <section id="archive" class="archive-wrapper">
-    <div class="filter-wrapper">
-        <a href="#curated" class="btn space-btn">Curated Space &uarr;</a>
-        <div class="filter-container">
-        </div>
-    </div>
-</section>
-    <div class="foot-wrapper">
+        <section class="foot-wrapper">
         <div class="foot-col col-1">
             <p>
                 David Wahrenburg <br>
@@ -82,16 +83,28 @@
              <p>Leipzig based graphic designer and programmer, with a focus on experimental web developement and exploring the area betweeen printed matter, digital spheres and physical spaces. I am open for anything in or out of the ordinary.
             </p>
         </div>
-        <div class="foot-col col-3"></div>
         <div class="foot-col col-4">
             <p>
+            <!--<a href="" class="neg-indent" >Curriculum&nbsp;Vitae</a>
+                <br><br>-->
+                <div id="impressum-btn" class="link" href=""> Impressum</div>
                 
-                <a href=""> Impressum</a><br>
-                <a href=""> &rarr;&nbsp;Curriculum&nbsp;Vitae</a>
                 <!--All&nbsp;rights&nbsp;reserved&nbsp;©&nbsp;2021-->
             </p>
         </div>
+        <div class="foot-col row-2 imprint-container">
+        Responsible for shown content + design and developement of this website:&nbsp;&nbsp;
+        David Wahrenburg — Dimpfelstraße 46, D-04347 Leipzig — ©2021 all rights reserved
+        </div>
+    </section>
+    <section id="archive" class="archive-wrapper">
+    <div class="filter-wrapper">
+        <a href="#curated" id="curated-btn" class="btn space-btn">Curated Space &uarr;</a>
+        <div class="filter-container">
+        </div>
     </div>
+</section>
+
 </body>
 <script src="js/grid.js" defer></script>
 <script src="js/curtain.js" defer></script>

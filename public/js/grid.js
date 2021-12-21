@@ -1,7 +1,13 @@
 class Grid {
 	constructor(workArr) {
 		this.arr = workArr;
-		this.filterArray = ["Web", "Print", "Typo", "Interaction", "Painting"];
+		this.filterArray = [
+			"Web",
+			"Print",
+			"Typo",
+			"Interaction",
+			"Miniatures",
+		];
 		this.filterBtns = [];
 		this.createFilterBtns();
 
@@ -48,7 +54,12 @@ class Grid {
 		}
 		this.cards.forEach((card) => {
 			let tags = card.getAttribute("tags").replace(" ", "").split(",");
-			if (findCommonElements(tags, filterArray)) {
+			if (
+				findCommonElements(
+					tags,
+					filterArray.map((x) => x.toLowerCase())
+				)
+			) {
 				card.style.display = "inline-block";
 			} else {
 				card.style.display = "none";
