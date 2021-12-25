@@ -1,5 +1,6 @@
 const IS_TOUCH = "ontouchstart" in window || navigator.msMaxTouchPoints > 0;
 const IS_MOBILE = window.innerWidth <= 800;
+const IMG_SPACE = "https://dw-assets.fra1.digitaloceanspaces.com/PF/";
 let titleText = "mail@davidwahrenburg.de * ";
 
 
@@ -8,8 +9,8 @@ const clickTouchHandle = IS_TOUCH ? "touchend" : "click";
 // shuffle(activeArray)
 
 
+let curtain = new Curtain(activeArray);
 window.onload = function () {
-	let curtain = new Curtain(activeArray);
 	let grid = new Grid(activeArray);
 	console.log(activeArray);
 
@@ -44,6 +45,11 @@ window.onload = function () {
 				toggleCuratedMobile();
 				e.preventDefault();
 			}
+			console.log(e.target);
+			if (e.target.classList.contains("curated-img")) {
+				curtain.changeImage();
+			}
+
 		}
 	});
 

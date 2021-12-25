@@ -76,7 +76,7 @@ class Grid {
 			c = 0;
 		}
 		cardImage.setAttribute("counter", c);
-		cardImage.src = "https://davidwahrenburg.de/" + event.pimgs[c];
+		cardImage.src = IMG_SPACE + event.pimgs[c];
 
 		// event.pimgs.unshift(event.pimgs[event.pimgs.length - 1]);
 		// event.pimgs.pop();

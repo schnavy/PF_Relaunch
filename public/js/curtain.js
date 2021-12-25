@@ -3,6 +3,7 @@ class Curtain {
 		this.wrapper = document.querySelector("#curated");
 
 		this.img = document.createElement("img");
+		this.img.classList.add("curated-img")
 		this.wrapper.appendChild(this.img);
 		let counter = Math.floor(Math.random() * thumbs.length);
 		this.img.src = thumbs[counter].src;
