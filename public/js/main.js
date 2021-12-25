@@ -1,14 +1,15 @@
 const IS_TOUCH = "ontouchstart" in window || navigator.msMaxTouchPoints > 0;
 const IS_MOBILE = window.innerWidth <= 800;
-let titleText = "mail@davidwahrenburg.de * "
+let titleText = "mail@davidwahrenburg.de * ";
+
 
 const clickTouchHandle = IS_TOUCH ? "touchend" : "click";
 
 // shuffle(activeArray)
 
-let curtain = new Curtain(activeArray);
 
 window.onload = function () {
+	let curtain = new Curtain(activeArray);
 	let grid = new Grid(activeArray);
 	console.log(activeArray);
 

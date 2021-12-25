@@ -19,7 +19,15 @@
             for(i = 0; i< event.tags.length; i++){
                 event.tags[i]=event.tags[i].toLowerCase();
             }
+            for(i = 0; i< event.pimgs.length; i++){
+                event.pimgs[i] = event.pimgs[i].replace("/uploads/", "")
+            }
+            if(event.thumb){
+                event.thumb = event.thumb.replace("/uploads/", "")
+            }
         })
+        
+        // Sort
 
         activeArray.sort(function(a, b) {
             var keyA = new Date(a.date),
@@ -30,19 +38,17 @@
             return 0;
         });
         console.log(activeArray)
+
+        // Preloader
         let thumbs = [];
             
         for (i = 0; i < activeArray.length; i++) {
-                
             if (activeArray[i].thumb != undefined) {
                 let temp = new Image();
-                 
-                temp.src = "https://davidwahrenburg.de/" + activeArray[i].thumb;
+                temp.src = "https://dw-assets.fra1.digitaloceanspaces.com/PF/" + activeArray[i].thumb;
                 thumbs.push(temp)
                 activeArray[i].pimgs.unshift(activeArray[i].thumb)
-            } else if(activeArray[i].pimgs != undefined) {
-                // thumbs[i].src ="https://davidwahrenburg.de/" +  activeArray[i].pimgs[0];
-            }
+            } 
 
         }
     
