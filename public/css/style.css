@@ -155,6 +155,8 @@ a:hover {
     height: calc(100vh - 90px);
     object-fit: cover;
     z-index: -10;
+    background-color: rgb(96, 96, 96);
+    overflow: hidden;
 }
 
 @media(max-width: 800px) {
