@@ -1,6 +1,6 @@
 const IS_TOUCH = "ontouchstart" in window || navigator.msMaxTouchPoints > 0;
 const IS_MOBILE = window.innerWidth <= 800;
-const IMG_SPACE = "https://dw-assets.fra1.digitaloceanspaces.com/PF/";
+const IMG_SPACE = "https://dw-assets.fra1.digitaloceanspaces.com/PF";
 let titleText = "mail@davidwahrenburg.de * ";
 
 

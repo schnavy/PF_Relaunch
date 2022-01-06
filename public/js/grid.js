@@ -121,7 +121,7 @@ class Grid {
 	addImage(str) {
 		let img = document.createElement("img");
 		img.classList.add("card-image");
-		img.src = "https://dw-assets.fra1.digitaloceanspaces.com/PF/" + str;
+		img.src = "https://dw-assets.fra1.digitaloceanspaces.com/PF" + str;
 		img.setAttribute("counter", 0);
 		return img;
 	}
