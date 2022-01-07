@@ -45,7 +45,7 @@
         for (i = 0; i < activeArray.length; i++) {
             if (activeArray[i].thumb != undefined) {
                 let temp = new Image();
-                temp.src = "https://dw-assets.fra1.digitaloceanspaces.com/PF" + activeArray[i].thumb;
+                temp.src = "https://dw-assets.fra1.digitaloceanspaces.com/PF/" + activeArray[i].thumb;
                 thumbs.push(temp)
                 activeArray[i].pimgs.unshift(activeArray[i].thumb)
             } 
