@@ -73,6 +73,7 @@ a:hover {
     background-color: black;
     color: white;
     display: grid;
+    grid-template-columns: 1fr 4fr min-content;
     grid-template-columns: 1fr 4fr 120px;
     /* gap: 10px; */
     position: fixed;
@@ -93,6 +94,12 @@ a:hover {
 
 .col-2 p {
     max-width: 950px;
+}
+.col-3 p {
+    white-space: nowrap;
+}
+.col-3 {
+    /* text-align: right; */
 }
 
 .link {
@@ -130,7 +137,7 @@ a:hover {
     }
 }
 
-.col-4 {
+.col-3 {
     padding-right: 10px;
 }
 
@@ -144,7 +151,7 @@ a:hover {
     width: 100vw;
     /* background-color: lightblue; */
 
-    height: calc(100vh - 90px);
+    height: calc(100vh - 70px);
 
 }
 
@@ -152,7 +159,7 @@ a:hover {
     top: 0;
     position: absolute;
     width: 100%;
-    height: calc(100vh - 90px);
+    height: calc(100vh - 70px);
     object-fit: cover;
     z-index: -10;
     background-color: rgb(96, 96, 96);
@@ -320,7 +327,7 @@ a:hover {
 .grid-card .card-image {
     margin: 8px 0px;
     max-width: 100%;
-    background-color: green;
+    /* background-color: green; */
     /* min-height: 200px; */
     max-height: 250px;
     object-fit: cover;
