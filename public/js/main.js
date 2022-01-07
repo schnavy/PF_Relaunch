@@ -10,6 +10,7 @@ const clickTouchHandle = IS_TOUCH ? "touchend" : "click";
 
 
 let curtain = new Curtain(activeArray);
+
 window.onload = function () {
 	let grid = new Grid(activeArray);
 	console.log(activeArray);
@@ -34,6 +35,8 @@ window.onload = function () {
 		} else if (e.target.classList.contains("extendable")) {
 			grid.toggleExtendedDescription(e.target);
 		} else if (e.target.classList.contains("filter-btn")) {
+			console.log("hihi");
+			
 			e.target.classList.toggle("active-btn");
 			grid.updateCardsByFilter();
 		} else if (e.target.id == "impressum-btn") {

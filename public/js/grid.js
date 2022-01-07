@@ -45,7 +45,7 @@ class Grid {
 	}
 	updateCardsByFilter() {
 		let filterArray = this.getFilter();
-
+		
 		if (filterArray.length == 0) {
 			this.cards.forEach((card) => {
 				card.style.display = "inline-block";

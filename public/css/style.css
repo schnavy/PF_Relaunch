@@ -221,6 +221,12 @@ a:hover {
 .filter-container {
     display: inline-block;
 }
+.filter-btn.active-btn {
+    background-color: rgb(0, 0, 255);
+    outline: 2px solid rgb(0, 0, 255);
+    color: white;
+    /* font-style: italic; */
+}
 
 @media(min-width: 800px) {
     .filter-wrapper {
