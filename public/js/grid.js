@@ -88,10 +88,10 @@ class Grid {
 		card.id = event.id;
 		card.setAttribute("tags", event.tags);
 		card.innerHTML = this.addParagraph(event.title, "title");
-		// card.innerHTML += this.addParagraph("("+event.addInfos+")", "infos indent");
 		card.innerHTML += this.addParagraph(event.date, "year indent");
 		card.innerHTML += this.addLink(event.extlink, "website indent");
-		card.appendChild(this.addDescription(event.description));
+		card.appendChild(this.addDescription(event.description + "<br/> <br/>" + event.addInfos));
+		// if(event.addInfos){ card.innerHTML += this.addParagraph(event.addInfos, "infos indent");}
 		card.appendChild(this.addImage(event.thumb || event.pimgs[0]));
 		this.wrapper.appendChild(card);
 		return card;
@@ -102,10 +102,9 @@ class Grid {
 	}
 	addDescription(str) {
 		let description = document.createElement("p");
-
 		description.innerHTML = this.cutDescription(description, str);
 
-		description.classList.add("decription");
+		description.classList.add("description");
 		return description;
 	}
 	addLink(str) {
@@ -130,7 +129,7 @@ class Grid {
 		let length = 100;
 		if (str.length < length) return str;
 		elem.classList.add("extendable");
-
+		str = str.split("<br/>")[0];
 		str = str.substring(0, length);
 		return str + "<span class'more-string'>... &darr;</span>";
 	}
@@ -138,10 +137,10 @@ class Grid {
 		let event = this.getEventByEventID(elem.parentElement.id);
 		if (elem.classList.contains("extended")) {
 			elem.classList.remove("extended");
-			elem.innerHTML = this.cutDescription(elem, event.description);
+			elem.innerHTML = this.cutDescription(elem, event.description + "<br/> <br/>" + event.addInfos);
 		} else {
 			elem.classList.add("extended");
-			elem.textContent = event.description;
+			elem.innerHTML = event.description + "<br/> <br/>" + event.addInfos;
 		}
 	}
 

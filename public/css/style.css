@@ -313,10 +313,11 @@ a:hover {
 
 .grid-card .title {
     /* text-decoration: underline; */
-    font-style: italic;
+    /* font-style: italic; */
 }
 
-.grid-card .decription {
+.grid-card .description {
+    font-style: italic;
     margin: 8px 0px;
 }
 
