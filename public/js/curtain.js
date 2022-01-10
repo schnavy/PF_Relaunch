@@ -50,7 +50,11 @@ class Curtain {
 	}
 	changeImage() {
 		let counter = Math.floor(Math.random() * thumbs.length);
-		this.img.src = thumbs[counter].src;
+		if(this.img.src != thumbs[counter].src){
+			this.img.src = thumbs[counter].src;
+		}else{
+			changeImage()	
+		}
 	}
 
 	radiusBerechnen(count) {
