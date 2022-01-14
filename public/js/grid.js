@@ -5,7 +5,7 @@ class Grid {
 			"Web",
 			"Print",
 			"Typo",
-			"Interaction",
+			"Installation",
 			"Miniatures",
 		];
 		this.filterBtns = [];

@@ -49,7 +49,11 @@ body {
     margin-bottom: 110px;
     /* scroll-snap-type: y mandatory;
     scroll-snap-points-y: 100%; */
-
+    font-family: monospace;
+    font-size: 120%;
+    line-height: 110%;
+    letter-spacing: -0.2px;
+    margin-bottom: 150px;
 }
 
 a {
