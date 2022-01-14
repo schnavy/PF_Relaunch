@@ -13,6 +13,7 @@ class Curtain {
 		this.totalTravelled = 100;
 		this.prevX = 0;
 		this.prevY = 0;
+		this.counter = Math.floor(Math.random() * thumbs.length);
 	}
 	updateCursor(e) {
 		this.form.style.display = "block";
@@ -49,12 +50,8 @@ class Curtain {
 		this.form.style.display = "none";
 	}
 	changeImage() {
-		let counter = Math.floor(Math.random() * thumbs.length);
-		if(this.img.src != thumbs[counter].src){
-			this.img.src = thumbs[counter].src;
-		}else{
-			changeImage()	
-		}
+		(this.counter >= thumbs.length -1) ? this.counter = 0 : this.counter++
+		this.img.src = thumbs[this.counter].src;
 	}
 
 	radiusBerechnen(count) {
