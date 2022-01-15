@@ -50,7 +50,8 @@ body {
     /* scroll-snap-type: y mandatory;
     scroll-snap-points-y: 100%; */
     font-family: monospace;
-    font-size: 120%;
+    font-size: 110%;
+
     line-height: 110%;
     letter-spacing: -0.2px;
     margin-bottom: 150px;
@@ -99,9 +100,11 @@ a:hover {
 .col-2 p {
     max-width: 950px;
 }
+
 .col-3 p {
     white-space: nowrap;
 }
+
 .col-3 {
     /* text-align: right; */
 }
@@ -225,6 +228,7 @@ a:hover {
 .filter-container {
     display: inline-block;
 }
+
 .filter-btn.active-btn {
     background-color: rgb(0, 0, 255);
     outline: 2px solid rgb(0, 0, 255);
