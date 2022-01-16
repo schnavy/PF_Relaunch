@@ -1,7 +1,7 @@
 const IS_TOUCH = "ontouchstart" in window || navigator.msMaxTouchPoints > 0;
 const IS_MOBILE = window.innerWidth <= 800;
 const IMG_SPACE = "https://dw-assets.fra1.digitaloceanspaces.com/PF/";
-let titleText = "mail@davidwahrenburg.de * ";
+let titleText = "mail@davidwahrenburg.de ___________________________";
 
 
 const clickTouchHandle = IS_TOUCH ? "touchend" : "click";
@@ -63,7 +63,7 @@ window.onload = function () {
 		arr.shift();
 		titleText = arr.join("");
 		document.title = titleText;
-	}, 600)
+	}, 1000)
 }
 
 function durchrotieren(arr) {
