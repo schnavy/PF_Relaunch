@@ -71,6 +71,8 @@ a:hover {
 }
 
 .foot-wrapper {
+    line-height: 113%;
+
     z-index: 80;
     box-sizing: border-box;
     width: 100%;
