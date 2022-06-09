@@ -44,7 +44,7 @@
 
 body {
     font-family: 'Monument Grotesk';
-    font-size: 118%;
+    font-size: 114%;
     line-height: 110%;
     margin-bottom: 110px;
     /* scroll-snap-type: y mandatory;
@@ -53,6 +53,7 @@ body {
 
     letter-spacing: -0.3px;
     margin-bottom: 150px;
+    background-color: #fafafa;
 }
 
 a {
@@ -66,10 +67,11 @@ a:hover {
 }
 
 .foot-wrapper a {
-    color: white;
+    color: rgb(235, 235, 235);
 }
 
 .foot-wrapper {
+    z-index: 80;
     box-sizing: border-box;
     width: 100%;
     /* padding: 16px; */
@@ -92,7 +94,7 @@ a:hover {
 }
 
 .foot-col {
-    padding: 12px;
+    padding: 10px;
 }
 
 .col-2 p {
@@ -156,7 +158,7 @@ a:hover {
     width: 100vw;
     /* background-color: lightblue; */
 
-    height: calc(100vh - 57px);
+    height: calc(100vh - 51px);
 
 }
 
@@ -164,7 +166,7 @@ a:hover {
     top: 0;
     position: absolute;
     width: 100%;
-    height: calc(100vh - 57px);
+    height: calc(100vh - 51px);
     object-fit: cover;
     z-index: -10;
     background-color: rgb(96, 96, 96);
@@ -202,7 +204,7 @@ a:hover {
 .filter-wrapper {
     /* height: 100px; */
     margin-bottom: 30px;
-    padding: 6px;
+    padding: 5px;
     z-index: 10;
 }
 
@@ -210,7 +212,7 @@ a:hover {
     display: inline-block;
     padding: 8px 14px;
 
-    margin: 6px 6px 6px 6px;
+    margin: 5px 5px 5px 5px;
     background-color: rgb(186, 186, 186);
     color: white;
     border-radius: 100px;
@@ -247,7 +249,7 @@ a:hover {
         color: white;
         /* font-style: italic; */
     }
-    
+
     .filter-btn:hover {
         border: 2px solid rgb(0, 0, 255);
     }
@@ -287,15 +289,15 @@ a:hover {
     /* display: grid; */
     /* grid-template-columns: repeat(4, 1fr); */
     /* gap: 15px; */
-    padding: 6px;
+    padding: 5px;
     max-width: 100vw;
 }
 
 .grid-card {
     vertical-align: top;
     display: inline-block;
-    padding: 6px;
-    width: 370px;
+    padding: 5px;
+    width: 340px;
     /* margin-bottom: 16px; */
     /* background-color: lightblue; */
 
@@ -313,7 +315,7 @@ a:hover {
     /* max-width: 95%; */
     /* max-height: 100px; */
     overflow: hidden;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 
 }
 
@@ -339,17 +341,32 @@ a:hover {
 
 .grid-card .card-image {
     margin: 6px 0px;
-    max-width: 100%;
+    max-width: 95%;
     /* background-color: green; */
     /* min-height: 200px; */
     max-height: 300px;
     object-fit: cover;
-    cursor: pointer;
+
+    border-radius: 3px;
     /* outline: 1px solid white; */
 
 }
+
 .grid-card .card-image:hover {
-/* outline: 1px solid lightgray; */
+    /* outline: 1px solid lightgray; */
+
+}
+
+.carroussel .card-image {
+    /* outline: 1px solid lightgray; */
+    transform: translateY(0px);
+    transition: all 150ms ease-out;
+    cursor: pointer;
+}
+
+.carroussel .card-image:hover {
+    /* outline: 1px solid lightgray; */
+    transform: translateY(2px);
 }
 
 @media(max-width: 800px) {

@@ -9,8 +9,8 @@ class Curtain {
 		this.img.src = thumbs[counter].src;
 		this.cursor = document.querySelector("#cursor");
 		this.form = document.querySelector("#svg-cursor circle");
-		this.countToChange = 400;
-		this.totalTravelled = 100;
+		this.countToChange = 800;
+		this.totalTravelled = this.countToChange/2;
 		this.prevX = 0;
 		this.prevY = 0;
 		this.counter = Math.floor(Math.random() * thumbs.length);
@@ -58,7 +58,7 @@ class Curtain {
 		let temp = map(count, 0, this.countToChange, 0, 1);
 		let square = temp * temp;
 		return Math.floor(
-			(this.countToChange - map(square, 0, 1, 0, this.countToChange)) / 4
+			(this.countToChange - map(square, 0, 1, 0, this.countToChange)) / 8
 		);
 	}
 }
