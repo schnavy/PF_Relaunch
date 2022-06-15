@@ -1,7 +1,7 @@
 class Grid {
   constructor (workArr) {
     this.arr = workArr
-    this.filterArray = ['Web', 'Print', 'Typo', 'Installation', 'Miniatures']
+    this.filterArray = ['Web', 'Print', 'Installation', 'Miniatures']
     this.filterBtns = []
     this.createFilterBtns()
 
@@ -13,7 +13,6 @@ class Grid {
     this.arr.forEach(e => {
       this.cards.push(this.createCard(e))
     })
-    console.log(this.cards)
   }
 
   createFilterBtns () {
@@ -42,7 +41,11 @@ class Grid {
 
     if (filterArray.length == 0) {
       this.cards.forEach(card => {
-        card.style.display = 'inline-block'
+        if (card.getAttribute('tags').includes('miniatures')) {
+          card.style.display = 'none'
+        } else {
+          card.style.display = 'inline-block'
+        }
       })
       return
     }
@@ -84,12 +87,13 @@ class Grid {
     card.classList.add('grid-card')
     card.id = event.id
     card.setAttribute('tags', event.tags)
-    card.innerHTML = this.addParagraph(event.title, 'title')
-    card.innerHTML += this.addParagraph('(' + event.date + ')', 'year indent')
+    card.innerHTML = this.addParagraph(event.date, 'year indent')
+    card.innerHTML += this.addParagraph(event.title, 'title')
     card.innerHTML += this.addLink(event.extlink, 'website indent')
     card.appendChild(
       this.addDescription(event.description + '<br/> <br/>' + event.addInfos)
     )
+
     // if(event.addInfos){ card.innerHTML += this.addParagraph(event.addInfos, "infos indent");}
     if (event.pimgs.length > 1) {
       card.classList.add('carroussel')
@@ -101,6 +105,10 @@ class Grid {
   addParagraph (str, classstr) {
     if (str == '') return
     return "<p class='" + classstr + "'>" + str + '</p>'
+  }
+  addSpan (str, classstr) {
+    if (str == '') return
+    return "<span class='" + classstr + "'>" + str + '</span>'
   }
   addDescription (str) {
     let description = document.createElement('p')

@@ -35,6 +35,15 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Monument Grotesk SM';
+    src: url('../fonts/ABCMonumentGroteskSemi-Mono-Regular.woff2') format('woff2'),
+        url('../fonts/ABCMonumentGroteskSemi-Mono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 
 * {
@@ -44,16 +53,18 @@
 
 body {
     font-family: 'Monument Grotesk';
-    font-size: 114%;
-    line-height: 110%;
+    font-size: 104%;
+    line-height: 108%;
     margin-bottom: 110px;
     /* scroll-snap-type: y mandatory;
     scroll-snap-points-y: 100%; */
-    font-family: monospace;
+    /* font-family: monospace; */
 
-    letter-spacing: -0.3px;
+    /* letter-spacing: -0.3px; */
+    letter-spacing: 0.2px;
     margin-bottom: 150px;
     background-color: #fafafa;
+    
 }
 
 a {
@@ -261,7 +272,7 @@ a:hover {
     background-color: transparent;
     border: 2px dashed black;
     color: black;
-    margin-right: 16px;
+    /* margin-right: 16px; */
 }
 
 .space-btn:hover {
@@ -298,9 +309,9 @@ a:hover {
 .grid-card {
     vertical-align: top;
     display: inline-block;
-    padding: 5px;
-    width: 340px;
-    /* margin-bottom: 16px; */
+    padding: 4px;
+    width: 300px;
+    /* margin-bottom: 10px; */
     /* background-color: lightblue; */
 
 
@@ -317,39 +328,45 @@ a:hover {
     /* max-width: 95%; */
     /* max-height: 100px; */
     overflow: hidden;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 
 }
 
 .grid-card .title {
     /* text-decoration: underline; */
     /* font-style: italic; */
+
 }
 
 .grid-card .description {
     font-style: italic;
     margin: 6px 0px;
+    /* color: rgb(187, 187, 187); */
 }
 
 .grid-card .extendable {
     cursor: pointer;
+}
+.grid-card .extendable:hover {
+    font-style: normal;
 }
 
 .grid-card .year {
     /* letter-spacing: -0.07em;
     font-variant-numeric: tabular-nums; */
     /* font-style: italic; */
+    color: rgb(186, 186, 186);
 }
 
 .grid-card .card-image {
-    margin: 6px 0px;
-    max-width: 95%;
+    margin: 5px 0px;
+    max-width: 98%;
     /* background-color: green; */
     /* min-height: 200px; */
-    max-height: 300px;
+    max-height: 270px;
     object-fit: cover;
 
-    border-radius: 3px;
+    border-radius: 4px;
     /* outline: 1px solid white; */
 
 }

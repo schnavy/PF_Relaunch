@@ -1,7 +1,7 @@
 const IS_TOUCH = "ontouchstart" in window || navigator.msMaxTouchPoints > 0;
 const IS_MOBILE = window.innerWidth <= 800;
 const IMG_SPACE = "https://dw-assets.fra1.digitaloceanspaces.com/PF/";
-let titleText = "get in touch: mail@davidwahrenburg.de";
+let titleText = "Hello World! ";
 
 
 const clickTouchHandle = IS_TOUCH ? "touchend" : "click";
@@ -13,7 +13,7 @@ let curtain = new Curtain(activeArray);
 
 window.onload = function () {
 	let grid = new Grid(activeArray);
-	console.log(activeArray);
+	grid.updateCardsByFilter();
 
 	document.addEventListener("mousemove", (e) => {
 		if (e.target.id == "curated" || e.target.id == "archive-btn") {
