@@ -24,7 +24,6 @@ app.get('/', async (req, res) => {
       return response.json()
     })
     .then(function (d) {
-      console.log(d)
       res.render('index.ejs', {
         work: d,
         title: 'Arbeiten'

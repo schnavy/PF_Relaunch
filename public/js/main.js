@@ -1,7 +1,7 @@
 const IS_TOUCH = "ontouchstart" in window || navigator.msMaxTouchPoints > 0;
 const IS_MOBILE = window.innerWidth <= 800;
 const IMG_SPACE = "https://dw-assets.fra1.digitaloceanspaces.com/PF/";
-let titleText = "Hello World! ";
+// let titleText = "Hello World! ";
 
 
 const clickTouchHandle = IS_TOUCH ? "touchend" : "click";
@@ -57,13 +57,13 @@ window.onload = function () {
 	});
 
 
-	setInterval(()=>{
-		arr = Array.from(titleText)
-		arr.push(arr[0]);
-		arr.shift();
-		titleText = arr.join("");
-		document.title = titleText;
-	}, 1000)
+	// setInterval(()=>{
+	// 	arr = Array.from(titleText)
+	// 	arr.push(arr[0]);
+	// 	arr.shift();
+	// 	titleText = arr.join("");
+	// 	document.title = titleText;
+	// }, 1000)
 }
 
 function durchrotieren(arr) {
